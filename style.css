@@ -1,0 +1,216 @@
+/* Add these styles at the beginning of your CSS file */
+.site-header {
+    text-align: center;
+    padding: 40px 20px;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    border-radius: 15px;
+    color: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.logo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-section i {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: #ecf0f1;
+}
+
+.logo-section h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.logo-section p {
+    font-size: 1.1em;
+    opacity: 0.9;
+    margin: 0;
+    font-weight: 300;
+}
+
+/* Add this to your existing media query for mobile responsiveness */
+@media (max-width: 480px) {
+    .site-header {
+        padding: 20px;
+    }
+    
+    .logo-section h1 {
+        font-size: 2em;
+    }
+    
+    .logo-section p {
+        font-size: 1em;
+    }
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-sort-container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+#searchInput {
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 300px;
+}
+
+#sortSelect {
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.view-toggle {
+    display: flex;
+    gap: 10px;
+}
+
+.view-toggle button {
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.view-toggle button.active {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+.books-container {
+    display: grid;
+    gap: 20px;
+    transition: all 0.3s ease;
+}
+
+.books-container.grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.books-container.list {
+    grid-template-columns: 1fr;
+}
+
+.book-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+}
+
+.book-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.book-info {
+    padding: 15px;
+}
+
+.book-title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.book-author, .book-publisher, .book-date {
+    color: #666;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+.loading {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2em;
+    color: #666;
+}
+
+.error {
+    text-align: center;
+    padding: 20px;
+    color: #dc3545;
+}
+
+/* List View Specific Styles */
+.books-container.list .book-card {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+}
+
+.books-container.list .book-card img {
+    height: 200px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .search-sort-container {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #searchInput, #sortSelect {
+        width: 100%;
+    }
+
+    .books-container.grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .books-container.list .book-card {
+        grid-template-columns: 1fr;
+    }
+}
